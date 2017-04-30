@@ -37,8 +37,8 @@ def clean_data(x_values,y_values):
     y_sorted = np.fft.rfft(y_values)
     clean_frequencies = np.fft.rfftfreq(len(x_values), 0.01)
     for i in range(0, len(clean_frequencies)):
-	if clean_frequencies[i] > 4 :
-	    y_sorted[i] = 0
+        if clean_frequencies[i] > 4 :
+            y_sorted[i] = 0
     y_clean = np.fft.irfft(y_sorted)
     return y_clean
 
